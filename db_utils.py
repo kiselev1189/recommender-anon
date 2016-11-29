@@ -3,7 +3,7 @@ import pymysql
 import pandas as pd
 from read_utils import identify_successors
 
-connection = pymysql.connect(user="PLACEHOLDER", password="PLACEHOLDER", host="PLACEHOLDER", database="invisible2")
+connection = pymysql.connect(user="PLACEHOLDER", password="PLACEHOLDER", host="PLACEHOLDER", database="PLACEHOLDER")
 
 """This module defines utilities for database interaction"""
 
@@ -28,7 +28,7 @@ def train_data():
 
 def current_sets():
     """Downloads and returns a set of goods that are availiable"""
-    query = open("current_sets.sql").read()
+    query = open("PLACEHOLDER").read()
     df = pd.read_sql(query, connection)
     return set(df["item_set_id"].unique())
 
